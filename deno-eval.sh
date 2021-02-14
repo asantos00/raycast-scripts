@@ -5,9 +5,11 @@
 # @description Evaluates a deno script and shows the result
 # @raycast.schemaVersion 1
 # @raycast.title deno - eval
-# @raycast.mode silent
+# @raycast.mode fullOutput
 # @raycast.packageName asantos00
+# @raycast.icon images/deno.png
 
 # @raycast.argument1 { "type": "text", "placeholder": "Deno code to execute" }
 
-deno eval "$1"
+
+NO_COLOR=true deno eval -q "console.log($1)"

@@ -8,18 +8,10 @@
 // @raycast.mode silent
 // @raycast.packageName asantos00
 // @raycast.icon images/codesandbox.png
-// @raycast.argument1 { "type": "text", "placeholder": "gatsby, nuxt, next, parcel, static" }
 
 const { exec } = require("child_process");
 
 const CODE_SANDBOX_URL = "https://codesandbox.io/s/";
-const [template] = process.argv.slice(2);
-
-const sandboxConfig = template ? {
-    "sandbox.config.json": {
-      content: `{\"template\": \"${template}\"}`,
-    },
-} : null;
 
 const parameters = JSON.stringify({
   files: {
@@ -32,7 +24,6 @@ const parameters = JSON.stringify({
         name: "created-with-raycast",
       }),
     },
-    ...sandboxConfig
   },
 });
 
